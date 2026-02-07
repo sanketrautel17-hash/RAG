@@ -1,0 +1,30 @@
+# Frameworks (choose one or both)
+langchain
+langchain-community
+llama-index
+motor                          # Async MongoDB driver
+
+# Embeddings
+sentence-transformers          # For local embeddings
+openai                         # For OpenAI embeddings
+google-generativeai            # For Google embeddings
+
+# Vector Stores (choose one)
+chromadb                       # Local, easy to start
+faiss-cpu                      # High performance local
+pinecone-client                # Cloud solution
+qdrant-client                  # Cloud/local
+
+# Document Processing
+pypdf                          # PDF parsing
+unstructured                   # Universal document loader
+python-docx                    # Word documents
+
+# API Framework (for serving)
+fastapi
+uvicorn
+
+# Utilities
+python-dotenv                  # Environment variables
+tiktoken                       # Token counting
+httpx                          # Async HTTP client for web scraping
