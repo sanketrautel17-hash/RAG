@@ -4,6 +4,7 @@ Entry point for the RAG API server
 
 import os
 from dotenv import load_dotenv
+from core.apis.api import app
 
 # Load environment variables before any other imports
 load_dotenv()
