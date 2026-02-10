@@ -16,9 +16,10 @@ pinecone-client                # Cloud solution
 qdrant-client                  # Cloud/local
 
 # Document Processing
-pypdf                          # PDF parsing
+llama-parse                    # LlamaParse - advanced document loader (primary)
+pypdf                          # PDF parsing (fallback)
 unstructured                   # Universal document loader
-python-docx                    # Word documents
+python-docx                    # Word documents (fallback)
 
 # API Framework (for serving)
 fastapi

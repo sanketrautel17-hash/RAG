@@ -23,11 +23,15 @@ export function ChatInterface({
     const [topK, setTopK] = useState(5);
     const [expandedSources, setExpandedSources] = useState<string | null>(null);
 
-    const messagesEndRef = useRef<HTMLDivElement | null>(null);
+
+    const messagesContainerRef = useRef<HTMLDivElement | null>(null);
     const inputRef = useRef<HTMLTextAreaElement | null>(null);
 
     useEffect(() => {
-        messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+        // With column-reverse, scrollTop = 0 shows the newest messages
+        if (messagesContainerRef.current) {
+            messagesContainerRef.current.scrollTop = 0;
+        }
     }, [messages]);
 
     useEffect(() => {
@@ -205,7 +209,7 @@ export function ChatInterface({
             )}
 
             {/* Messages */}
-            <main className="messages-container">
+            <main className="messages-container" ref={messagesContainerRef}>
                 {messages.length === 0 ? (
                     <div className="empty-state">
                         <div className="empty-icon">
@@ -313,7 +317,6 @@ export function ChatInterface({
                                 </div>
                             </div>
                         ))}
-                        <div ref={messagesEndRef} />
                     </div>
                 )}
             </main>

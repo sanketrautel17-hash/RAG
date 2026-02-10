@@ -26,7 +26,7 @@ class LLMService:
         genai.configure(api_key=self.api_key)
 
         # Use Gemini Flash for text generation
-        self.model_name = "gemini-2.0-flash"
+        self.model_name = "gemini-2.5-flash"
         self.model = genai.GenerativeModel(self.model_name)
         self.genai = genai
 
